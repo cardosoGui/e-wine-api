@@ -1,0 +1,12 @@
+{
+	"directories": [
+		"src/core",
+		"src/services",
+		"src/services/Product",
+		"src/services/User",
+		"src/services/Category",
+		"src/services/Config",
+
+		"src/services/Email"
+	]
+}
