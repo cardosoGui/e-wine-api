@@ -1,63 +1,47 @@
 /** ATTENTION. THIS IS AN AUTO GENERATED FILE. DO NOT MODIFY IT. */
 
 const User = {
-	get addArticle() {
-		return require("./addProduct")
-	},
-	get addCategory() {
-		return require("./addCategory")
-	},
-	get addPlan() {
-		return require("./addPlan")
-	},
-	get addVideo() {
-		return require("./addVideo")
+	get authenticate() {
+		return require('./authenticate')
 	},
 
-	get authenticate() {
-		return require("./authenticate")
-	},
 	get createAdmin() {
-		return require("./createAdmin")
-	},
-	get deleteCategory() {
-		return require("./deleteCategory")
-	},
-	get deletePlan() {
-		return require("./deletePlan")
-	},
-	get deleteVideo() {
-		return require("./deleteVideo")
+		return require('./createAdmin')
 	},
 	get edit() {
-		return require("./edit")
-	},
-	get editArticle() {
-		return require("./editArticle")
-	},
-	get deleteArticle() {
-		return require("./deleteArticle")
-	},
-	get editCategory() {
-		return require("./editCategory")
-	},
-	get editPlan() {
-		return require("./editPlan")
-	},
-	get editVideo() {
-		return require("./editVideo")
+		return require('./edit')
 	},
 	get getInfo() {
-		return require("./getInfo")
+		return require('./getInfo')
+	},
+	get addProduct() {
+		return require('./addProduct')
 	},
 	get list() {
-		return require("./list")
+		return require('./list')
 	},
 	get register() {
-		return require("./register")
+		return require('./register')
 	},
 	get remove() {
-		return require("./remove")
+		return require('./remove')
+	},
+	get deleteProduct() {
+		return require('./deleteProduct')
+	},
+	get editProduct() {
+		return require('./editProduct')
+	},
+	get addCategory() {
+		return require('./addCategory')
+	},
+
+	get editCategory() {
+		return require('./editCategory')
+	},
+
+	get deleteCategory() {
+		return require('./deleteCategory')
 	}
 }
 

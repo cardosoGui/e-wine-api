@@ -1,4 +1,4 @@
-module.exports = async function addCategory({ name, sub_category, key_words }) {
+module.exports = async function addCategory({ name, key_words }) {
 	if (!name) {
 		const err = new Error()
 		err.status = 400
@@ -6,7 +6,7 @@ module.exports = async function addCategory({ name, sub_category, key_words }) {
 		throw err
 	}
 
-	const category = await App.Models.category.create({ name, sub_category, key_words })
+	const category = await App.Models.category.create({ name, key_words })
 
 	return category
 }
