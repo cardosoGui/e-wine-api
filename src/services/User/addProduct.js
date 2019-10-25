@@ -1,5 +1,5 @@
-const fs = require('fs')
-const { promisify } = require('util')
+const fs = require("fs")
+const { promisify } = require("util")
 const readFile = promisify(fs.readFile.bind(fs))
 
 /**
@@ -11,24 +11,36 @@ const readFile = promisify(fs.readFile.bind(fs))
  */
 
 module.exports = async function addProduct(
-	{ name, quantity, price, filename, description, images, categories = '', key_word_ids },
+	{
+		name,
+		quantity,
+		price,
+		filename = "test.mp4",
+		description,
+		images,
+		categories = "",
+		key_word_ids
+	},
 	fileDescriptor
 ) {
-	const ext = filename.split('.').pop()
+	const ext = filename.split(".").pop()
 
-	let resolvedFileName = ''
+	let resolvedFileName = ""
 
 	console.log(fileDescriptor)
 
 	try {
-		;[ resolvedFileName ] = fileDescriptor.path.match(/[^\\\/:*?\"<>|]+$/)
+		;[resolvedFileName] = fileDescriptor.path.match(/[^\\\/:*?\"<>|]+$/)
 		if (!resolvedFileName) throw new Error()
 	} catch (e) {
 		const err = new Error()
 		err.status = 400
-		err.payload = { message: 'Nome da inválida.' }
+		err.payload = { message: "Nome da inválida." }
 	}
-	categories = categories.split(',').map(Number).filter(Boolean)
+	categories = categories
+		.split(",")
+		.map(Number)
+		.filter(Boolean)
 
 	const product = await App.Models.product.create(
 		{
@@ -52,9 +64,9 @@ module.exports = async function addProduct(
 		// 	]
 		// }
 	)
-	await product.setCategories(categories)
+	// await product.setCategories(categories)
 
-	const contents = await readFile(fileDescriptor.path)
+	// const contents = await readFile(fileDescriptor.path)
 
 	// await App.enqueueOperation(async () => {
 	// 	await Promise.all([

@@ -1,4 +1,4 @@
-const DataTypes = require('sequelize')
+const DataTypes = require("sequelize")
 
 const types = {
 	name: { type: DataTypes.STRING },
@@ -15,11 +15,11 @@ const types = {
  * @param {import('sequelize').Sequelize} sequelize
  * @param {import('sequelize').DataTypes} DataTypes
  */
-const create = (sequelize) => {
-	const Product = sequelize.define('product', types)
+const create = sequelize => {
+	const Product = sequelize.define("product", types)
 
-	Product.associate = (models) => {
-		Product.belongsToMany(models.category, { through: 'product_category' })
+	Product.associate = models => {
+		Product.belongsToMany(models.category, { through: "product_category" })
 	}
 
 	return Product
